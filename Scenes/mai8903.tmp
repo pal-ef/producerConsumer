@@ -1,0 +1,223 @@
+[gd_scene load_steps=19 format=3 uid="uid://caede5j5kk6s4"]
+
+[ext_resource type="Texture2D" uid="uid://dabx4whgjpa03" path="res://Assets/free_character_nude.png" id="1_0djlp"]
+[ext_resource type="Script" path="res://Scripts/Chef.gd" id="1_jaajg"]
+[ext_resource type="Script" path="res://Scripts/main.gd" id="1_n2ocq"]
+[ext_resource type="PackedScene" uid="uid://eqs8wq1nks1h" path="res://Scenes/placeable.tscn" id="2_6crgq"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kk0ls"]
+atlas = ExtResource("1_0djlp")
+region = Rect2(16, 2, 16, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_80tqq"]
+atlas = ExtResource("1_0djlp")
+region = Rect2(0, 1, 16, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wh45o"]
+atlas = ExtResource("1_0djlp")
+region = Rect2(32, 1, 16, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nd55a"]
+atlas = ExtResource("1_0djlp")
+region = Rect2(0, 21, 16, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kfqtf"]
+atlas = ExtResource("1_0djlp")
+region = Rect2(16, 21, 16, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1pgbm"]
+atlas = ExtResource("1_0djlp")
+region = Rect2(32, 21, 16, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qgl3g"]
+atlas = ExtResource("1_0djlp")
+region = Rect2(0, 41, 16, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7uvn0"]
+atlas = ExtResource("1_0djlp")
+region = Rect2(16, 41, 16, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d0sbn"]
+atlas = ExtResource("1_0djlp")
+region = Rect2(32, 41, 16, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uamc7"]
+atlas = ExtResource("1_0djlp")
+region = Rect2(32, 60, 16, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fo0kq"]
+atlas = ExtResource("1_0djlp")
+region = Rect2(0, 60, 16, 20)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_nl24n"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kk0ls")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_80tqq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wh45o")
+}],
+"loop": true,
+"name": &"WalkDown",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nd55a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kfqtf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1pgbm")
+}],
+"loop": true,
+"name": &"WalkLeft",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qgl3g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7uvn0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d0sbn")
+}],
+"loop": true,
+"name": &"WalkRight",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uamc7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fo0kq")
+}],
+"loop": true,
+"name": &"WalkUp",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_5a08y"]
+radius = 4.4
+height = 12.4
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_uhdqv"]
+vertices = PackedVector2Array(926, 242, 929, 207, 959, 190, 1026, 178, 1411, 276, 1025, 267, 1402, 0, 1026, 120, 1026, 102, 1026, 60, 1008, 95, 996, 71, 383, 94, 376, 72, 1026, 152, 1007, 127, 1002, 147, 389, 124, 379, 145, 388, 124, 356, 120, 352, 152, 1026, 41, 1025, 275, 5, 267, 457, 241, 0, 0, 352, 180, 352, 64, 354, 104, 896, 204, 393, 188, 895, 204, 526, 203, 457, 215, 346, 42, 396, 27, 983, 31)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3, 4, 5), PackedInt32Array(6, 7, 8), PackedInt32Array(9, 6, 8, 10, 11), PackedInt32Array(11, 10, 12, 13), PackedInt32Array(6, 4, 3, 14), PackedInt32Array(15, 7, 6, 14, 16), PackedInt32Array(17, 15, 16, 18, 19), PackedInt32Array(20, 19, 18, 21), PackedInt32Array(6, 9, 22), PackedInt32Array(4, 23, 5), PackedInt32Array(0, 5, 24, 25), PackedInt32Array(25, 24, 26, 27), PackedInt32Array(28, 13, 12, 29, 26), PackedInt32Array(2, 1, 30), PackedInt32Array(31, 2, 30, 32, 33), PackedInt32Array(31, 33, 34), PackedInt32Array(31, 34, 25, 27), PackedInt32Array(21, 27, 26), PackedInt32Array(20, 21, 26, 29), PackedInt32Array(35, 28, 26), PackedInt32Array(36, 35, 26), PackedInt32Array(36, 26, 6, 37), PackedInt32Array(37, 6, 22)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-9.74305, -8.96669, 1411.52, -11.0046, 1422.49, 287.341, 1016.93, 285.304, 1015.71, 48.5016, 981.613, 40.7577, 397.029, 37.0895, 358.057, 48.9092, 361.711, 62.3592, 361.711, 171.59, 419.406, 183.002, 468.884, 183.002, 466.449, 277.56, -3.65365, 276.745), PackedVector2Array(287.42, 32.6061, 377.543, 61.5441, 993.791, 61.1365, 1081.48, 32.6061, 1076.61, 134.908, 1005.97, 104.747, 384.851, 103.524, 327.61, 124.718), PackedVector2Array(293.509, 102.302, 388.504, 114.121, 1004.75, 117.382, 1055.9, 101.894, 1061.99, 171.59, 1001.1, 156.917, 379.979, 154.879, 343.443, 165.884, 292.292, 154.879), PackedVector2Array(306.906, 178.111, 957.51, 180.218, 1054.69, 163.846, 1043.72, 231.096, 895.143, 213.57, 527.343, 212.755, 404.337, 233.541), PackedVector2Array(361.711, 230.688, 1074.17, 232.726, 1081.48, 277.967, 375.108, 276.745), PackedVector2Array(920.719, 196.859, 1037.64, 197.675, 1038.85, 255.143, 914.629, 254.328)])
+source_geometry_group_name = &"navigation_polygon_source_group"
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_n2ocq")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(576, 324)
+
+[node name="Chef" type="CharacterBody2D" parent="."]
+position = Vector2(100, 324)
+scale = Vector2(5, 5)
+script = ExtResource("1_jaajg")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Chef"]
+sprite_frames = SubResource("SpriteFrames_nl24n")
+animation = &"WalkDown"
+autoplay = "WalkDown"
+frame_progress = 0.122419
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Chef"]
+position = Vector2(0, 3)
+shape = SubResource("CapsuleShape2D_5a08y")
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="Chef"]
+debug_enabled = true
+
+[node name="Placeables" type="Node2D" parent="."]
+position = Vector2(341, 103)
+
+[node name="Placeable" parent="Placeables" instance=ExtResource("2_6crgq")]
+
+[node name="Placeable2" parent="Placeables" instance=ExtResource("2_6crgq")]
+position = Vector2(90, 0)
+
+[node name="Placeable3" parent="Placeables" instance=ExtResource("2_6crgq")]
+position = Vector2(180, 0)
+
+[node name="Placeable4" parent="Placeables" instance=ExtResource("2_6crgq")]
+position = Vector2(272, 0)
+
+[node name="Placeable5" parent="Placeables" instance=ExtResource("2_6crgq")]
+position = Vector2(363, 0)
+
+[node name="Placeable6" parent="Placeables" instance=ExtResource("2_6crgq")]
+position = Vector2(451, 0)
+
+[node name="Placeable7" parent="Placeables" instance=ExtResource("2_6crgq")]
+position = Vector2(0, 150)
+
+[node name="Placeable8" parent="Placeables" instance=ExtResource("2_6crgq")]
+position = Vector2(90, 150)
+
+[node name="Placeable9" parent="Placeables" instance=ExtResource("2_6crgq")]
+position = Vector2(180, 150)
+
+[node name="Placeable10" parent="Placeables" instance=ExtResource("2_6crgq")]
+position = Vector2(272, 150)
+
+[node name="Placeable11" parent="Placeables" instance=ExtResource("2_6crgq")]
+position = Vector2(363, 150)
+
+[node name="Placeable12" parent="Placeables" instance=ExtResource("2_6crgq")]
+position = Vector2(451, 150)
+
+[node name="Placeable13" parent="Placeables" instance=ExtResource("2_6crgq")]
+position = Vector2(0, 289)
+
+[node name="Placeable14" parent="Placeables" instance=ExtResource("2_6crgq")]
+position = Vector2(90, 289)
+
+[node name="Placeable15" parent="Placeables" instance=ExtResource("2_6crgq")]
+position = Vector2(180, 289)
+
+[node name="Placeable16" parent="Placeables" instance=ExtResource("2_6crgq")]
+position = Vector2(272, 289)
+
+[node name="Placeable17" parent="Placeables" instance=ExtResource("2_6crgq")]
+position = Vector2(363, 289)
+
+[node name="Placeable18" parent="Placeables" instance=ExtResource("2_6crgq")]
+position = Vector2(451, 289)
+
+[node name="Placeable19" parent="Placeables" instance=ExtResource("2_6crgq")]
+position = Vector2(90, 428)
+
+[node name="Placeable20" parent="Placeables" instance=ExtResource("2_6crgq")]
+position = Vector2(180, 428)
+
+[node name="Placeable21" parent="Placeables" instance=ExtResource("2_6crgq")]
+position = Vector2(270, 428)
+
+[node name="Placeable22" parent="Placeables" instance=ExtResource("2_6crgq")]
+position = Vector2(362, 428)
+
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
+position = Vector2(0, -10)
+scale = Vector2(0.821098, 2.45353)
+navigation_polygon = SubResource("NavigationPolygon_uhdqv")
+
+[node name="ChefSleepPosition" type="Marker2D" parent="."]
+position = Vector2(100, 306)
+
+[connection signal="target_reached" from="Chef/NavigationAgent2D" to="Chef" method="_on_navigation_agent_2d_target_reached"]

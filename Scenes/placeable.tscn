@@ -1,0 +1,30 @@
+[gd_scene load_steps=6 format=3 uid="uid://eqs8wq1nks1h"]
+
+[ext_resource type="Texture2D" uid="uid://bbgvi37t5p00u" path="res://Assets/interior free.png" id="1_7uymy"]
+[ext_resource type="Script" path="res://Scripts/placeable.gd" id="1_hjuqm"]
+[ext_resource type="Texture2D" uid="uid://ceu8o3h407p46" path="res://Assets/taco.png" id="3_p82py"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_icv38"]
+atlas = ExtResource("1_7uymy")
+region = Rect2(32, 16, 16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yowxh"]
+size = Vector2(14.4, 12)
+
+[node name="Placeable" type="StaticBody2D"]
+scale = Vector2(5, 5)
+script = ExtResource("1_hjuqm")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("AtlasTexture_icv38")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 2)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_yowxh")
+
+[node name="Item" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(0, -2.4)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("3_p82py")
